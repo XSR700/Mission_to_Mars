@@ -14,13 +14,13 @@
     <div class="container">
       <!-- Add Jumbotron to Header -->
       <div class="jumbotron text-center">
-        <h1>Mission to Mars</h1>
+        <h1> <strong>Mission to Mars</strong></h1>
         <!-- Add a button to activate scraping script -->
-        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        <p> class="bg-success" <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
       </div>
       <!-- Add section for Mars News -->
       <div class="row" id="mars-news">
-        <div class="col-md-12">
+        <div class="col-xs-12 col-md-12">
           <div class="media">
             <div class="media-body">
               <h2>Latest Mars News</h2>
@@ -32,7 +32,7 @@
       </div>
       <!-- Section for Featured Image and Facts table -->
       <div class="row" id="mars-featured-image">
-        <div class="col-md-8">
+        <div class="col-xs-8 col-md-8">
           <h2>Featured Mars Image</h2>
           <img
             src="{{mars.featured_image }}"
@@ -40,7 +40,7 @@
             alt="Responsive image"
           />
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-4 col-md-4">
           <!-- Mars Facts -->
           <div class="row" id="mars-facts">
             <h4>Mars Facts</h4>
@@ -48,6 +48,28 @@
           </div>
         </div>
       </div>
+      <div>
+        <div class="col-xs-12 col-md-12">
+        <!-- Mars Hemisphere Images and Titles-->  
+        <h2>Mars Hemisphere</h2>
+        <section class="content">
+          
+          {% for hemisphere in mars.mars_hemisphere %}
+            <li> {{hemisphere}}</li>
+          {% endfor %}
+          {% block content %}{% endblock %}
+        </section> 
+        
+        </div>
+      
+      
+      
+      </div>    
+    
+    
+    
+    
+    
     </div>
   </body>
 </html>
